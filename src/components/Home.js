@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Loading from './Loading'
-import { Wrapper } from './Wrapper'
+import Wrapper from './Wrapper'
 
 const Home = ({ setResult }) => {
   const [fullName, setFullName] = useState('')

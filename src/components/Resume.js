@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useReactToPrint } from 'react-to-print'
 import ErrorPage from './ErrorPage'
-import { Wrapper } from './Wrapper'
+import Wrapper from './Wrapper'
 
 const Resume = ({ result }) => {
   const componentRef = useRef()

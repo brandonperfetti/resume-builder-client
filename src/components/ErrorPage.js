@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Wrapper } from './Wrapper'
+import Wrapper from './Wrapper'
 
 const ErrorPage = () => {
   return (

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Loading from './Loading'
 import sendResume from './utils/util'
-import { Wrapper } from './Wrapper'
+import Wrapper from './Wrapper'
 
 const SendResume = () => {
   const [loading, setLoading] = useState(false)
