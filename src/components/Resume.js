@@ -15,7 +15,7 @@ const Resume = ({ result }) => {
 
   //👇🏻 function that replaces the new line with a break tag
   const replaceWithBr = (string) => {
-    return string.replace(/\n/g, '<br />')
+    return string.replace(/(\r\n|\n|\r)/gm, '<br>')
   }
 
   //👇🏻 returns an error page if the result object is empty

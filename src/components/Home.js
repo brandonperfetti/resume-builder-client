@@ -200,7 +200,7 @@ const Home = ({ setResult }) => {
               </div>
             </div>
 
-            <div className="space-y-6 sm:space-y-5">
+            <div className="space-y-3 sm:space-y-2">
               <div className="pt-4">
                 <h3 className="text-base font-semibold leading-6 text-gray-900">
                   Companies you've worked at
@@ -210,12 +210,13 @@ const Home = ({ setResult }) => {
                 </p>
               </div>
 
-              <div className="space-y-6 sm:space-y-5">
+              <div className="">
                 {companyInfo.map((company, index) => (
                   <div
-                    className="flex align-middle space-x-2 justify-center w-full"
+                    className=""
                     key={index}>
-                    <div className="flex flex-col w-1/3">
+                    <div className="flex align-middle space-x-2 justify-center w-full">
+                    <div className="flex flex-col w-full">
                       <label
                         htmlFor="name"
                         className="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">
@@ -225,11 +226,11 @@ const Home = ({ setResult }) => {
                         type="text"
                         name="name"
                         required
-                        className="block w-full min-w-0 flex-1 rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        className="block min-w-0 flex-1 rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                         onChange={(e) => handleUpdateCompany(e, index)}
                       />
                     </div>
-                    <div className="flex flex-col w-1/3">
+                    <div className="flex flex-col w-full">
                       <label
                         htmlFor="position"
                         className="block text-sm font-medium leading-6 text-gray-900 sm:pt-1.5">
@@ -243,25 +244,27 @@ const Home = ({ setResult }) => {
                         onChange={(e) => handleUpdateCompany(e, index)}
                       />
                     </div>
-
-                    <div className="flex space-x-2 h-9 mt-7">
+                    <div className="flex space-x-2 h-9 align-center mt-7">
+                    {companyInfo.length > 1 && (
+                      <button
+                        id="deleteBtn"
+                        className="rounded-md bg-red-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
+                        onClick={() => handleRemoveCompany(index)}>
+                        Del
+                      </button>
+                    )}
+                    </div>
+                  </div>
+                  <div className="flex mt-4 w-full h-9">
                       {companyInfo.length - 1 === index &&
                         companyInfo.length < 4 && (
                           <button
                             id="addBtn"
                             className="rounded-md bg-green-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-green-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600"
                             onClick={handleAddCompany}>
-                            Add
+                            Add Company
                           </button>
                         )}
-                      {companyInfo.length > 1 && (
-                        <button
-                          id="deleteBtn"
-                          className="rounded-md bg-red-600 py-2 px-3 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
-                          onClick={() => handleRemoveCompany(index)}>
-                          Del
-                        </button>
-                      )}
                     </div>
                   </div>
                 ))}
